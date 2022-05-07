@@ -1,8 +1,8 @@
-{ stdenv }:
+{ stdenv, python3Packages }:
 
 python3Packages.buildPythonApplication rec {
   pname = "myapp";
   src = ./.;
   version = "0.1";
-  propagatedBuildInputs = [ pkgs.python3Packages.flask ];
+  propagatedBuildInputs = [ python3Packages.flask ];
 }
