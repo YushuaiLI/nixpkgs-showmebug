@@ -1,14 +1,4 @@
-{
-  pkgs ? import <nixpkgs> {}
+{ sources ? import nix/sources.nix
+, channel ? sources."nixpkgs-21.11"
 }:
-
-with pkgs;
-
-let
-  packages = rec {
-    myapp = callPackage ./pkgs/myapp {};
-
-    inherit pkgs; # similar to `pkgs = pkgs;` This lets callers use the nixpkgs version defined in this file.
-  };
-in
-  packages
+import channel {overlays = [ (import ./overlay.nix) ];}
