@@ -55,7 +55,7 @@ in
   };
 
   showmebugPackages = rec {
-    pip2 = self.callPackage ./pkgs/phpunit { };
+    phpunit = self.callPackage ./pkgs/phpunit { };
   };
 }
 
