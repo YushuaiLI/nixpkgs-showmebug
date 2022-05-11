@@ -53,5 +53,9 @@ in
   } // self.pkgs.lib.optionalAttrs (self.pkgs ? graalvm17-ce) {
     java-language-server = self.callPackage ./pkgs/java-language-server { };
   };
+
+  showmebugPackages = rec {
+    pip2 = self.callPackage ./pkgs/phpunit { };
+  };
 }
 
