@@ -1,4 +1,4 @@
-{ stdenv, ffetchurl }:
+{ stdenv, fetchurl }:
 stdenv.mkDerivation rec {
   pname = "phpunit";
   version = "9.5.20";
